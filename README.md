@@ -1,6 +1,8 @@
 # mcp-experiment
 
-A FastMCP 3.1 **CodeMode hub** that aggregates multiple MCP servers behind a single, token-efficient interface.
+> **This experiment has graduated to production.** See [**mcp-hub**](https://github.com/MCKRUZ/mcp-hub) for the config-driven, security-hardened version with YAML server registry, structured logging, Docker support, and 19 tests.
+
+A FastMCP 3.1 **CodeMode hub** that aggregates multiple MCP servers behind a single, token-efficient interface. This repo served as the proof-of-concept that validated the architecture — hardcoded servers, no config system, minimal error handling.
 
 Instead of exposing every tool schema to the LLM on session start, CodeMode collapses all downstream tools into three meta-tools: `search`, `get_schema`, and `execute`. The LLM discovers tools on demand and chains calls in a single sandbox execution — no intermediate results polluting the context window.
 
